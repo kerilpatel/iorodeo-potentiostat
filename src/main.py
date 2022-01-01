@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
+import matplotlib.pyplot as plt
 
 #creating parent window
 root = tk.Tk()
@@ -62,13 +63,30 @@ tk.Text(testAndParametersTab, height = 1, width = 10).grid(column = 0, row = 12,
 ttk.Label(testAndParametersTab, text = 'Duration (s)', anchor = 'w').grid(column = 0, row = 13)
 tk.Text(testAndParametersTab, height = 1, width = 10).grid(column = 0, row = 14, padx = 10, pady = 20)
 
+##########TEST AND PARAMETERS TAB###############
+
+##########DATA ACQUISITION######################
+
+def showgraph():
+
+    potential = [10, 12, 17, 26, 50]
+    time = [2, 4, 6, 8, 10]
+
+    fig, axs = plt.subplots()
+
+    axs.plot(potential, time)
+    axs.set(xlabel = 'time', ylabel = 'potential')
+    axs.grid()
+    plt.show()
+
+ttk.Button(dataAcquisitionTab, text = "Graph!", command = showgraph).grid(column = 0, row = 1, padx = 0, pady = 10)
+
+
+
+
+
 
 root.mainloop()
-
-
-
-
-
 
 
 
