@@ -4,14 +4,14 @@ from tkinter import *
 def addTestAndParameters(root, ttk, testAndParametersTab):
     def clear_screen():
         for widgets in testAndParametersTab.winfo_children():
-            if(str(widgets)=='.!notebook.!frame2.!label' or str(widgets)=='.!notebook.!frame2.!label2' or str(widgets)=='.!notebook.!frame2.!optionmenu'):
+            if(str(widgets) =='.!notebook.!frame2.!label' or str(widgets) =='.!notebook.!frame2.!label2' or str(widgets) =='.!notebook.!frame2.!optionmenu'):
                 continue
             else:
                 widgets.destroy()
 
     def display_selected(choice):
         choice = voltametricTestValue.get()
-        if(choice=='constant voltage'):
+        if(choice == 'constant voltage'):
             clear_screen()
             # current range uA
             currentRangeValue = StringVar(root)
