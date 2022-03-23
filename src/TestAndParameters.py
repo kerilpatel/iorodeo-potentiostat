@@ -24,20 +24,24 @@ def addTestAndParameters(root, ttk, testAndParametersTab):
             ttk.Spinbox(testAndParametersTab, textvariable=sampleRateValue, from_=0, to=200).grid(column=0, row=6,padx=10, pady=20)
 
             # quiet time(s)
+            quietTimeValue = StringVar(root)
             ttk.Label(testAndParametersTab, text='Quiet time (s)', anchor='w').grid(column=0, row=7)
-            tk.Text(testAndParametersTab, height=1, width=10).grid(column=0, row=8, padx=10, pady=20)
+            tk.Spinbox(testAndParametersTab, textvariable = quietTimeValue).grid(column=0, row=8, padx=10, pady=20)
 
             # quiet value (V)
+            quietValue = StringVar(root)
             ttk.Label(testAndParametersTab, text='Quiet value (V)', anchor='w').grid(column=0, row=9)
-            tk.Text(testAndParametersTab, height=1, width=10).grid(column=0, row=10, padx=10, pady=20)
+            tk.Spinbox(testAndParametersTab, textvariable = quietValue).grid(column=0, row=10, padx=10, pady=20)
 
             # value (V)
+            valueValue = StringVar(root)
             ttk.Label(testAndParametersTab, text='Value (V)', anchor='w').grid(column=0, row=11)
-            tk.Text(testAndParametersTab, height=1, width=10).grid(column=0, row=12, padx=10, pady=20)
+            tk.Spinbox(testAndParametersTab, textvariable = valueValue).grid(column=0, row=12, padx=10, pady=20)
 
             # duration
+            durationValue = StringVar(root)
             ttk.Label(testAndParametersTab, text='Duration (s)', anchor='w').grid(column=0, row=13)
-            tk.Text(testAndParametersTab, height=1, width=10).grid(column=0, row=14, padx=10, pady=20)
+            tk.Spinbox(testAndParametersTab, textvariable = durationValue).grid(column=0, row=14, padx=10, pady=20)
 
         elif (choice == 'chronoamperometry'):
             clear_screen()
@@ -53,8 +57,34 @@ def addTestAndParameters(root, ttk, testAndParametersTab):
                                                                                                   padx=10, pady=20)
 
             # quiet time(s)
+            quietTimeValue = StringVar(root)
             ttk.Label(testAndParametersTab, text='Quiet time (s)', anchor='w').grid(column=0, row=7)
-            tk.Text(testAndParametersTab, height=1, width=10).grid(column=0, row=8, padx=10, pady=20)
+            tk.Spinbox(testAndParametersTab, textvariable = quietTimeValue).grid(column=0, row=8, padx=10, pady=20)
+
+            # quiet value(V)
+            quietValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Quiet value (s)', anchor='w').grid(column=0, row=9)
+            tk.Spinbox(testAndParametersTab, textvariable = quietValue).grid(column=0, row=10, padx=10, pady=20)
+
+            # step 1 duration(s)  
+            step1DurationTimeValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Step 1 duration (s)', anchor='w').grid(column=0, row=11)
+            tk.Spinbox(testAndParametersTab, textvariable = step1DurationTimeValue).grid(column=0, row=12, padx=10, pady=20)
+
+            # step 1 value(V)  
+            step1DurationValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Step 1 value (V)', anchor='w').grid(column=0, row=13)
+            tk.Spinbox(testAndParametersTab, textvariable = step1DurationValue).grid(column=0, row=14, padx=10, pady=20)
+
+            # step 2 duration(s)  
+            step2DurationTimeValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Step 2 duration (s)', anchor='w').grid(column=0, row=15)
+            tk.Spinbox(testAndParametersTab, textvariable = step2DurationTimeValue).grid(column=0, row=16, padx=10, pady=20)
+
+            # step 1 value(V)  
+            step2DurationValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Step 2 value (V)', anchor='w').grid(column=0, row=17)
+            tk.Spinbox(testAndParametersTab, textvariable = step2DurationValue).grid(column=0, row=18, padx=10, pady=20)
 
         else:
             pass
