@@ -86,9 +86,48 @@ def addTestAndParameters(root, ttk, testAndParametersTab):
             ttk.Label(testAndParametersTab, text='Step 2 value (V)', anchor='w').grid(column=0, row=17)
             tk.Spinbox(testAndParametersTab, textvariable = step2DurationValue).grid(column=0, row=18, padx=10, pady=20)
 
-        else:
-            pass
+        elif (choice == 'cyclic'):
+            clear_screen()
+            # current range uA
+            currentRangeValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Current Range uA', anchor='w').grid(column=0, row=3)
+            ttk.OptionMenu(testAndParametersTab, currentRangeValue, 'select', '1', '10', '100', '1000').grid(column=0,row=4,padx=10,pady=20)
 
+            # Sample rate (Hz)
+            sampleRateValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Sample Rate (Hz)', anchor='w').grid(column=0, row=5)
+            ttk.Spinbox(testAndParametersTab, textvariable=sampleRateValue, from_=0, to=200).grid(column=0, row=6,
+                                                                                                  padx=10, pady=20)
+
+            # quiet time(s)
+            quietTimeValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Quiet time (s)', anchor='w').grid(column=0, row=7)
+            tk.Spinbox(testAndParametersTab, textvariable = quietTimeValue).grid(column=0, row=8, padx=10, pady=20)
+
+            # quiet value(V)
+            quietValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Quiet value (s)', anchor='w').grid(column=0, row=9)
+            tk.Spinbox(testAndParametersTab, textvariable = quietValue).grid(column=0, row=10, padx=10, pady=20)
+
+            # min value(V)
+            minValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Min value (V)', anchor='w').grid(column=0, row=11)
+            tk.Spinbox(testAndParametersTab, textvariable = minValue).grid(column=0, row=12, padx=10, pady=20)
+
+            # max value(V)
+            maxValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Max value (V)', anchor='w').grid(column=0, row=11)
+            tk.Spinbox(testAndParametersTab, textvariable = maxValue).grid(column=0, row=12, padx=10, pady=20)
+
+            # scan rate(V/s)
+            scanRateValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Scan rate (V/s)', anchor='w').grid(column=0, row=15)
+            tk.Spinbox(testAndParametersTab, textvariable = scanRateValue).grid(column=0, row=16, padx=10, pady=20)
+
+            # cycles(#)
+            cyclesValue = StringVar(root)
+            ttk.Label(testAndParametersTab, text='Cycles (#)', anchor='w').grid(column=0, row=17)
+            tk.Spinbox(testAndParametersTab, textvariable = cyclesValue).grid(column=0, row=18, padx=10, pady=20)
 #voltametric test
     voltametricTestValue = StringVar(root)
     ttk.Label(testAndParametersTab, text = 'Voltametric Test', anchor = 'w').grid(column = 0, row = 1)
